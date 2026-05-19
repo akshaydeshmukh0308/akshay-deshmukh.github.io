@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Akshay Deshmukh – Human-Centered AI researcher specializing in multimodal systems, HCI, and intelligent interfaces." />
+  <meta name="author" content="Akshay Deshmukh" />
+  <title>Akshay Deshmukh | Human-Centered AI | HCI Researcher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --bg-card: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #5a5a5a;
+      --text-light: #8a8a8a;
+      --accent: #2a4d8f;
+      --border: #e0ddd6;
+      --tag-bg: #eef1f8;
+      --tag-text: #2a4d8f;
+      --sidebar-w: 260px;
+      --nav-h: 52px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,245,240,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      padding: 0 32px; gap: 32px;
+    }
+    .nav-brand {
+      font-family: "DM Serif Display", serif;
+      font-size: 17px; color: var(--text);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; list-style: none; margin-left: auto; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--text-muted); letter-spacing: 0.02em; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    .page-wrap {
+      max-width: 1080px; margin: 0 auto;
+      padding: 40px 24px 80px;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 48px; align-items: start;
+    }
+
+    .sidebar { position: sticky; top: calc(var(--nav-h) + 24px); }
+
+    .profile-photo {
+      width: 180px; height: 220px;
+      border: 3px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .profile-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .sidebar-name {
+      font-family: "DM Serif Display", serif;
+      font-size: 22px; line-height: 1.2; margin-bottom: 4px;
+    }
+    .sidebar-title {
+      font-size: 13px; color: var(--text-muted);
+      margin-bottom: 16px; line-height: 1.5;
+    }
+
+    .sidebar-links { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+    .sidebar-links li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-muted); }
+    .sidebar-links a { font-size: 13px; color: var(--accent); }
+    .s-icon { width: 15px; height: 15px; flex-shrink: 0; margin-top: 3px; opacity: 0.55; }
+
+    .sidebar-divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+    .sidebar-label {
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 600; color: var(--text-light); margin-bottom: 10px;
+    }
+
+    .badge-list { display: flex; flex-wrap: wrap; gap: 5px; }
+    .badge {
+      font-size: 11.5px; background: var(--tag-bg); color: var(--tag-text);
+      padding: 2px 9px; border-radius: 3px; font-weight: 500;
+    }
+
+    main { min-width: 0; }
+    .section { margin-bottom: 44px; }
+
+    .sec-head {
+      font-family: "DM Mono", monospace;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); font-weight: 500; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sec-head::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+    .intro p { font-size: 15.5px; color: var(--text); line-height: 1.78; }
+    .intro p + p { margin-top: 14px; }
+    .intro strong { color: var(--accent); font-weight: 600; }
+
+    .pos-block { margin-bottom: 12px; padding-left: 14px; border-left: 2px solid var(--border); }
+    .pos-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
+    }
+
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .r-card { background: var(--bg-card); border: 1px solid var(--border); padding: 16px 18px; border-radius: 4px; }
+    .r-card h4 { font-size: 13.5px; font-weight: 600; margin-bottom: 5px; }
+    .r-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .news-list { list-style: none; }
+    .news-item {
+      display: grid; grid-template-columns: 86px 1fr; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+      font-size: 13.5px; align-items: baseline;
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .n-date { font-family: "DM Mono", monospace; font-size: 11px; color: var(--text-light); padding-top: 2px; }
+    .n-text { color: var(--text); line-height: 1.55; }
+    .n-text a { color: var(--accent); }
+    .news-hidden { display: none; }
+    .toggle-btn {
+      background: none; border: 1px solid var(--border);
+      cursor: pointer; font-family: "DM Sans", sans-serif;
+      font-size: 12.5px; color: var(--text-muted);
+      padding: 6px 14px; margin-top: 12px;
+      transition: all 0.2s; border-radius: 3px;
+    }
+    .toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .pub-year {
+      font-family: "DM Mono", monospace; font-size: 11px;
+      color: var(--accent); font-weight: 500; letter-spacing: 0.06em;
+      margin: 18px 0 2px;
+    }
+    .pub { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .pub:first-of-type { border-top: 1px solid var(--border); }
+    .pub-title { font-size: 14px; font-weight: 500; line-height: 1.5; margin-bottom: 3px; }
+    .pub-meta { font-size: 12.5px; color: var(--text-muted); margin-bottom: 2px; }
+    .pub-venue { font-size: 12.5px; color: var(--text-light); font-style: italic; }
+    .pub-link { font-size: 12px; color: var(--accent); margin-left: 8px; }
+    .status {
+      display: inline-block; font-size: 10.5px;
+      background: #fffbe6; color: #8a6800;
+      border: 1px solid #e8d87a; padding: 1px 7px;
+      border-radius: 3px; margin-left: 8px; font-weight: 500; vertical-align: middle;
+    }
+
+    .exp { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .exp:first-child { border-top: 1px solid var(--border); }
+    .exp-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 3px; }
+    .exp-role { font-size: 14.5px; font-weight: 600; }
+    .exp-dates { font-family: "DM Mono", monospace; font-size: 11px; color: var(--text-light); white-space: nowrap; }
+    .exp-org { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
+    .exp-desc { font-size: 13px; color: var(--text-muted); line-height: 1.62; }
+
+    .t-list { list-style: none; }
+    .t-list li {
+      display: flex; gap: 10px; padding: 7px 0;
+      border-bottom: 1px solid var(--border); font-size: 13.5px;
+    }
+    .t-list li::before { content: "→"; color: var(--accent); flex-shrink: 0; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .proj-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .proj-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(42,77,143,0.08);
+    }
+
+    .proj-thumb {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .proj-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .proj-card:hover .proj-thumb img { transform: scale(1.03); }
+
+    .proj-thumb--placeholder {
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .proj-thumb-label {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    .proj-info { padding: 14px 16px 16px; }
+
+    .proj-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .proj-title a { color: var(--text); border-bottom: none; }
+    .proj-title a:hover { color: var(--accent); }
+
+    .proj-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.58;
+      margin-bottom: 10px;
+    }
+
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .proj-tag {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 7px;
+      border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+    }
+      color: var(--text-light);
+      padding: 0 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+    }
+
+    .city-node {
+      transition: color 0.2s, border-color 0.2s;
+      position: relative;
+    }
+
+    .city-node:hover {
+      color: var(--accent) !important;
+      border-bottom: 2px solid var(--accent) !important;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 9px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      text-decoration: none;
+      transition: all 0.18s;
+      background: transparent;
+    }
+
+    .social-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--tag-bg);
+      text-decoration: none;
+    }
+
+    .social-icon svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .social-icon:hover svg { opacity: 1; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 22px 32px;
+      font-size: 12px; color: var(--text-light); text-align: center;
+    }
+      .sidebar { position: static; }
+      .profile-photo { width: 120px; height: 150px; }
+      .research-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 16px; gap: 16px; }
+      .nav-links { gap: 14px; }
+      .nav-links li:nth-child(n+5) { display: none; }
+    }
+
+    /* ── CV BUTTON ── */
+    .cv-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 10px 0 14px;
+      padding: 7px 13px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      width: fit-content;
+    }
+    .cv-btn:hover { background: #1a3570; text-decoration: none; border-bottom: none; }
+
+    /* ── AVAILABILITY BADGE ── */
+    .avail-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11.5px;
+      color: #2a7a4a;
+      background: #e8f5ee;
+      border: 1px solid #b0ddc0;
+      border-radius: 3px;
+      padding: 5px 9px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .avail-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #2a8a4a;
+      flex-shrink: 0;
+      animation: availPulse 2s ease-in-out infinite;
+    }
+    @keyframes availPulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(42,138,74,0.4); }
+      50%      { box-shadow: 0 0 0 5px rgba(42,138,74,0); }
+    }
+
+    /* ── PUB FILTERS ── */
+    .pub-filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .pub-filter {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 13px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .pub-filter:hover { border-color: var(--accent); color: var(--accent); }
+    .pub-filter.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── CITE BUTTON ── */
+    .cite-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+      transition: all 0.15s;
+      font-size: 10px;
+      font-family: "DM Mono", monospace;
+      letter-spacing: 0.04em;
+    }
+    .cite-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cite-btn.copied { background: #e8f5ee; border-color: #2a8a4a; color: #2a8a4a; }
+
+    /* ── CONTACT FORM ── */
+    .contact-form { max-width: 600px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+    .form-group label { font-size: 11px; font-family: "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+    .form-group input, .form-group textarea {
+      font-family: "DM Sans", sans-serif;
+      font-size: 13.5px;
+      color: var(--text);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 8px 11px;
+      outline: none;
+      transition: border-color 0.18s;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-submit {
+      font-family: "DM Sans", sans-serif;
+      font-size: 13.5px;
+      font-weight: 500;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 9px 22px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+    .form-submit:hover { background: #1a3570; }
+
+    /* ── SCROLL FADE-IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 38px; height: 38px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 999;
+      font-size: 16px;
+    }
+    .back-top.show { opacity: 1; pointer-events: all; }
+    .back-top:hover { background: #1a3570; }
+    }
+
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE — iPad (768–1024px) & Mobile (<768px)
+    ═══════════════════════════════════════════════ */
+
+    /* ── HAMBURGER MENU ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      margin-left: auto;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-nav-open .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .mobile-nav-open .hamburger span:nth-child(2) { opacity: 0; }
+    .mobile-nav-open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* ── IPAD (768px – 1024px) ── */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      :root { --sidebar-w: 200px; }
+
+      .page-wrap {
+        max-width: 100%;
+        padding: 32px 24px 60px;
+        gap: 32px;
+      }
+
+      .research-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 12.5px; }
+
+      .profile-photo { width: 160px; height: 190px; }
+
+      .exp-top { flex-direction: column; gap: 2px; }
+
+      .form-row { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── MOBILE (< 768px) ── */
+    @media (max-width: 768px) {
+
+      /* Nav */
+      nav {
+        padding: 0 16px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: var(--nav-h);
+        position: sticky;
+        top: 0;
+        z-index: 200;
+      }
+
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid var(--border);
+        padding: 8px 0 12px;
+        margin: 0;
+        background: rgba(247,245,240,0.98);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li { list-style: none; }
+      .nav-links a {
+        display: block;
+        padding: 8px 4px;
+        font-size: 14px;
+        color: var(--text-muted);
+        border-bottom: none;
+      }
+
+      /* Layout — single column */
+      .page-wrap {
+        grid-template-columns: 1fr;
+        padding: 20px 16px 60px;
+        gap: 0;
+      }
+
+      /* Sidebar — horizontal at top */
+      .sidebar {
+        position: static;
+        height: auto;
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        align-items: start;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 28px;
+      }
+
+      .profile-photo {
+        width: 130px;
+        height: 160px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-name { font-size: 18px; }
+      .sidebar-title { font-size: 12px; }
+
+      .sidebar-divider { margin: 10px 0; }
+
+      .sidebar-label { font-size: 9px; }
+
+      .badge { font-size: 10.5px; padding: 2px 7px; }
+
+      /* Social icons — 2 column grid on mobile */
+      .social-icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+      }
+
+      .social-icon { font-size: 11.5px; padding: 5px 7px; }
+
+      /* Main content */
+      main { padding-top: 0; }
+
+      .section { margin-bottom: 36px; }
+
+      /* Research grid — single column */
+      .research-grid { grid-template-columns: 1fr; gap: 10px; }
+
+      /* Projects — single column, horizontal scroll option */
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      /* Publications */
+      .pub-filters { gap: 5px; }
+      .pub-filter { font-size: 10px; padding: 3px 10px; }
+
+      .pub-title { font-size: 13.5px; }
+      .pub-meta, .pub-venue { font-size: 12px; }
+
+      /* Experience */
+      .exp-top { flex-direction: column; gap: 2px; }
+      .exp-dates { font-size: 10px; }
+      .exp-desc { font-size: 12.5px; }
+
+      /* Teaching */
+      .t-list li { font-size: 13px; }
+
+      /* News */
+      .news-item { grid-template-columns: 70px 1fr; font-size: 13px; }
+
+      /* Geeky bio section */
+      div[style*="display:flex; gap:20px"] {
+        flex-direction: column !important;
+      }
+
+      /* Globe — centre it */
+      #globe-canvas {
+        margin: 0 auto;
+        display: block !important;
+      }
+
+      /* Contact form */
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { max-width: 100%; }
+
+      /* City trail — wrap nicely */
+      .city-trail-wrap { flex-wrap: wrap; gap: 4px; }
+
+      /* Back to top */
+      .back-top { bottom: 16px; right: 16px; width: 34px; height: 34px; font-size: 14px; }
+
+      /* Footer */
+      footer { padding: 16px; flex-direction: column; gap: 6px; font-size: 11px; text-align: center; }
+
+      /* Section head */
+      .sec-head { font-size: 10px; }
+    }
+
+    /* ── VERY SMALL SCREENS (< 380px) ── */
+    @media (max-width: 380px) {
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+      .profile-photo {
+        width: 100%;
+        height: 220px;
+      }
+      .projects-grid { grid-template-columns: 1fr; }
+      .social-icons { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Akshay <span>Deshmukh</span></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#research" onclick="closeNav()">Research</a></li>
+    <li><a href="#publications" onclick="closeNav()">Publications</a></li>
+    <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+    <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+    <li><a href="#teaching" onclick="closeNav()">Teaching</a></li>
+    <li><a href="#news" onclick="closeNav()">News</a></li>
+    <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+
+  <aside class="sidebar">
+    <div class="profile-photo">
+      <img src="data:image/jpeg;base64,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" alt="Akshay Deshmukh">
+    </div>
+
+    <div class="sidebar-name">Akshay Deshmukh</div>
+    <div class="sidebar-title">Human-Centered AI &amp; HCI Researcher<br>TU Bergakademie Freiberg, Germany</div>
+
+    <ul class="sidebar-links">
+      <li>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:akshaydeshmukh0308@gmail.com">akshaydeshmukh0308@gmail.com</a>
+      </li>
+      <li>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Darmstadt, Germany</span>
+      </li>
+      <li>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.37a2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg>
+        <span>+49 176 45708646</span>
+      </li>
+    </ul>
+
+    <hr class="sidebar-divider">
+    <div class="sidebar-label">Research Interests</div>
+    <div class="badge-list">
+      <span class="badge">Multimodal HCI</span>
+      <span class="badge">Voice UIs</span>
+      <span class="badge">Human-AI Interaction</span>
+      <span class="badge">Usability Evaluation</span>
+      <span class="badge">XR Interfaces</span>
+      <span class="badge">Cognitive Load</span>
+      <span class="badge">Affective Computing</span>
+      <span class="badge">HITL Systems</span>
+    </div>
+
+    <hr class="sidebar-divider">
+    <div class="sidebar-label">Academic Service</div>
+    <ul class="sidebar-links">
+      <li>SV Chair – MuM 2025</li>
+      <li>Reviewer – AutoUI'25, IUI'26, CUI'26</li>
+      <li>Reviewer – Information Research, PeerJ, IJHCI</li>
+      <li>Asst. Editor – Smart Wearable Technology Journal</li>
+    </ul>
+
+    <hr class="sidebar-divider">
+    <div class="sidebar-label">Find me on</div>
+    <div class="social-icons">
+
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5h3.6v7h2V9.5h1.8L12 6.3l4.6 3.2H18.4v7h2V9.5H24L12 0z"/>
+        </svg>
+        <span>Google Scholar</span>
+      </a>
+
+      <!-- ORCID -->
+      <a href="https://orcid.org/YOUR-ORCID-ID" target="_blank" title="ORCID" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.344 5.016h-3.9V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.9-1.303 3.9-3.722 0-2.016-1.247-3.722-3.9-3.722h-2.297z"/>
+        </svg>
+        <span>ORCID</span>
+      </a>
+
+      <!-- ResearchGate -->
+      <a href="https://www.researchgate.net/profile/YOUR_NAME" target="_blank" title="ResearchGate" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a12.88 12.88 0 0 0-.39 2.671c-.026.303-.04.596-.04.876v.164c-.04.136-.085.275-.138.418a5.853 5.853 0 0 1-.487 1.025 5.4 5.4 0 0 1-.78.944 5.032 5.032 0 0 1-1.04.725 4.97 4.97 0 0 1-1.26.437 5.04 5.04 0 0 1-1.378.093 5.1 5.1 0 0 1-1.351-.296 5.23 5.23 0 0 1-1.222-.694 5.37 5.37 0 0 1-.984-1.04 5.4 5.4 0 0 1-.642-1.324 5.33 5.33 0 0 1-.218-1.515 5.23 5.23 0 0 1 .178-1.505c.163-.553.416-1.06.755-1.517A5.46 5.46 0 0 1 8.667.855 5.35 5.35 0 0 1 10.01.22a5.26 5.26 0 0 1 1.502-.218c.555 0 1.098.08 1.629.24.53.16 1.022.398 1.478.716a5.45 5.45 0 0 1 1.175 1.134l.007.01c.038-.343.1-.68.187-1.013.274-1.048.777-1.88 1.508-2.496C17.827.18 18.643 0 19.586 0zm.004 1.73c-.585 0-1.038.177-1.359.53-.32.354-.554.927-.702 1.72a15.064 15.064 0 0 0-.218 2.569v.14l-.004.11c.003.078.003.155 0 .23v.083a7.158 7.158 0 0 1-.056.64 6.87 6.87 0 0 1-.162.79 6.92 6.92 0 0 1-.644 1.648 7.004 7.004 0 0 1-1.08 1.442 7.076 7.076 0 0 1-1.45 1.09 7.05 7.05 0 0 1-1.748.664 7.105 7.105 0 0 1-1.9.177 7.14 7.14 0 0 1-1.865-.363 7.152 7.152 0 0 1-1.688-.885 7.2 7.2 0 0 1-1.382-1.362 7.217 7.217 0 0 1-.94-1.768 7.18 7.18 0 0 1-.336-2.072 7.135 7.135 0 0 1 .217-2.078 7.1 7.1 0 0 1 .963-2.1A7.12 7.12 0 0 1 8.8 2.41a7.18 7.18 0 0 1 1.826-.888 7.21 7.21 0 0 1 2.04-.305c.76 0 1.497.11 2.21.328a7.278 7.278 0 0 1 2.005.984c.14.103.274.21.404.32.038-.433.1-.858.183-1.273.222-1.13.61-1.989 1.164-2.575.555-.588 1.252-.882 2.09-.882h.872V0h-.004zM12.387 9.285h-2.51v3.842c.392.09.78.138 1.162.138 1.27 0 2.254-.373 2.951-1.12.697-.747 1.046-1.728 1.046-2.942 0-.258-.02-.507-.058-.746-.64.556-1.538.828-2.591.828zm-.617-6.48c-1.02 0-1.835.35-2.444 1.052-.61.702-.914 1.616-.914 2.742 0 1.14.298 2.063.894 2.768.596.706 1.4 1.059 2.41 1.059.338 0 .665-.04.979-.12V6.424h2.51v-.147c0-.58-.067-1.12-.202-1.617a4.1 4.1 0 0 0-.596-1.296 2.815 2.815 0 0 0-.994-.867 2.87 2.87 0 0 0-1.377-.329c-.088 0-.178.003-.266.009v-.372z"/>
+        </svg>
+        <span>ResearchGate</span>
+      </a>
+
+      <!-- Xing -->
+      <a href="https://www.xing.com/profile/YOUR_NAME" target="_blank" title="Xing" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.643-.962-.643H3.648z"/>
+        </svg>
+        <span>Xing</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/akshaydeshmukh" target="_blank" title="LinkedIn" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+    </div>
+  </aside>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="sec-head">About</div>
+      <div class="intro">
+        <p>Hi — I'm <strong>Akshay</strong>, a <strong>Human-Centered AI</strong> researcher working at the intersection of multimodal interaction, intelligent interfaces, and usability engineering. My core question is deceptively simple: <em>when people speak to, gesture at, or glance toward an AI system, does it actually understand them?</em> And if not — why not, and how do we measure the gap?</p>
+        <p>My research builds and evaluates AI systems that integrate <strong>speech, gesture, and visual input</strong> as first-class modalities — not as afterthoughts bolted onto existing interfaces. I develop psychometric scales, run empirical studies in both controlled and real-world settings, and model the cognitive costs that accumulate when people must switch between interaction modes. This work has produced two validated evaluation instruments: a usability scale purpose-built for voice user interfaces, and a context-aware scale for multimodal automotive interfaces.</p>
+        <p>Over the past decade I have moved fluidly between academia and industry — stress-testing large language models and foundation models at <a href="https://www.iais.fraunhofer.de/en.html">Fraunhofer IAIS</a>, building a standards-aligned voice evaluation lab at Deutsche Telekom, and conducting early HCI research at <a href="https://www.igd.fraunhofer.de/en">Fraunhofer IGD</a>. That back-and-forth between rigorous evaluation and real deployment is the lens through which I approach every research question.</p>
+      </div>
+
+      <blockquote style="margin: 24px 0 0; padding: 18px 22px; border-left: 3px solid var(--accent); background: var(--tag-bg); border-radius: 0 3px 3px 0;">
+        <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; line-height: 1.65; color: var(--accent); margin-bottom: 8px;">"In the world of voice interfaces, the best designs are those that don't just respond, but truly listen to the human heart."</p>
+        <p style="font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; color: var(--text-light); text-transform: uppercase;">— Akshay Deshmukh, Ph.D. Dissertation (2025)</p>
+      </blockquote>
+
+      <!-- GEEKY BIO BLOCK -->
+      <div style="margin-top:28px; padding:18px 20px; border:1px solid var(--border); background:var(--bg-card); border-radius:4px;">
+        <p style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-light); margin-bottom:12px;">A bit more about me</p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.75; margin-bottom:14px;">
+          I was born and raised in the city of <strong style="color:var(--accent)">Bengaluru, India</strong> — the Garden City, where the air smells of jasmine and filter coffee, and where I spent my early years equally fascinated by how things worked and why people behaved the way they did around them. That curiosity never left.
+        </p>
+        <p style="font-size:14.5px; color:var(--text); line-height:1.75; margin-bottom:16px;">
+          Since then I have been, professionally speaking, something of a nomad — moving from India to Germany and staying put just long enough in each city to develop opinions about its public transport. Fun fact: if you plot the coordinates of every city I have lived in for an extended period on a globe, they trace a surprisingly coherent arc from the Indian subcontinent to central Europe.
+        </p>
+
+        <!-- City trail -->
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0; margin-bottom:16px; font-family:'DM Mono',monospace; font-size:11.5px;">
+          <span class="city-node" data-city="Bengaluru" style="color:var(--accent); font-weight:500; cursor:default; padding:3px 0; border-bottom:2px solid var(--accent);">Bengaluru</span>
+          <span class="city-arrow">→</span>
+          <span class="city-node" data-city="Darmstadt (M.Sc.)" style="color:var(--text-muted); cursor:default; padding:3px 0;">Darmstadt</span>
+          <span class="city-arrow">→</span>
+          <span class="city-node" data-city="Sankt Augustin (Fraunhofer IAIS)" style="color:var(--text-muted); cursor:default; padding:3px 0;">Sankt Augustin</span>
+          <span class="city-arrow">→</span>
+          <span class="city-node" data-city="Freiberg (TU Bergakademie)" style="color:var(--text-muted); cursor:default; padding:3px 0;">Freiberg</span>
+        </div>
+
+        <!-- Mini globe SVG -->
+        <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+          <div style="flex-shrink:0;">
+            <canvas id="globe-canvas" width="200" height="200" style="display:block; border-radius:50%;"></canvas>
+          </div>
+
+          <div style="flex:1; min-width:160px;">
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.7; margin-bottom:10px;">
+              Outside of research, I trek whenever mountains are within reasonable striking distance, grow cherry tomatoes on my terrace in Darmstadt (mangoes back home in Bengaluru, naturally), and have been known to represent my home state in table tennis — though I now primarily use that skill to win arguments about reaction time in HCI experiments.
+            </p>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.7; margin-bottom:14px;">
+              I also practice yoga and meditation, which I find essential for anyone who spends their days thinking about cognitive load.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="background:var(--tag-bg); border:1px solid var(--border); border-radius:3px; padding:10px 13px;">
+                <span style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-light);">fun fact 01</span>
+                <p style="font-size:13px; color:var(--text); line-height:1.6; margin-top:4px;">My career trajectory follows a <strong style="color:var(--accent)">Fitts' Law</strong> curve — the further the target (tenure), the longer the movement time, but the larger the target gets as you approach it.</p>
+              </div>
+              <div style="background:var(--tag-bg); border:1px solid var(--border); border-radius:3px; padding:10px 13px;">
+                <span style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-light);">fun fact 02</span>
+                <p style="font-size:13px; color:var(--text); line-height:1.6; margin-top:4px;">I have collected more usability questionnaire responses than I have eaten <strong style="color:var(--accent)">dosas</strong>. Both numbers are in the thousands.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="pos-block">
+        <div class="pos-label">Currently</div>
+        <p style="font-size:14px"><strong>Scientific Employee / Assistant Professor</strong> at <a href="https://www.tu-freiberg.de/en">TU Bergakademie Freiberg</a>, Germany (Nov 2024 – Present). I teach Human-Centered AI, Intelligent User Interfaces, and Multimodal Systems across B.Sc. and M.Sc. programmes, supervise theses on topics ranging from driver emotion detection to Human-in-the-Loop AI design, and pursue active research in ubiquitous computing and XR-based interaction.</p>
+      </div>
+      <br>
+      <div class="pos-block">
+        <div class="pos-label">Previously</div>
+        <p style="font-size:14px">As <strong>Senior HMI-UX Researcher</strong> at <a href="https://www.iais.fraunhofer.de/en.html">Fraunhofer IAIS</a> (2022–2024), I led the human-centered evaluation of OpenGPT-X and the Foundation Model Playground — defining what "usable" means for large-scale AI systems when the users aren't engineers. Before that, as <strong>UX Research Engineer</strong> at Deutsche Telekom (2019–2022), I established a Voice Lab from the ground up, aligning evaluation protocols with ETSI and Alexa standards and applying mixed-method assessment to voice assistants deployed at scale.</p>
+        <p style="font-size:14px; margin-top:8px">I hold a <strong>Ph.D. in Human-Computer Interaction</strong> (2020–2025) from the <a href="https://www.uji.es/en/">Universitat Jaume I</a> / <a href="https://www.iais.fraunhofer.de/en.html">Fraunhofer IAIS</a>, and an M.Sc. in Distributed Software Systems from <a href="https://www.tu-darmstadt.de/index.en.jsp">TU Darmstadt</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="sec-head">Research Areas</div>
+      <div class="research-grid">
+        <div class="r-card">
+          <h4>Multimodal AI Systems</h4>
+          <p>Building and evaluating AI systems that treat speech, gesture, and visual input as equal, interchangeable modalities. A key focus is the <em>Modality-Switch Cognitive Cost</em> — quantifying what users actually lose when they are forced to change interaction channels mid-task.</p>
+        </div>
+        <div class="r-card">
+          <h4>Usability &amp; UX Evaluation</h4>
+          <p>Designing evaluation instruments that go beyond generic questionnaires. This includes the VUIQ (voice usability) and CAUS (context-aware automotive usability) — purpose-built, empirically validated scales for AI-driven interfaces where standard tools fall short.</p>
+        </div>
+        <div class="r-card">
+          <h4>Voice User Interfaces</h4>
+          <p>Investigating how conversational AI performs across real users, real accents, and real conditions — not just clean speech in ideal environments. Research spans multilingual VUIs, speaker personalization, and deployment robustness in healthcare and smart-home contexts.</p>
+        </div>
+        <div class="r-card">
+          <h4>Human-AI Interaction</h4>
+          <p>Designing AI systems that respond not just to what users say, but to how they feel. This includes affect-adaptive dialogue agents, Human-in-the-Loop (HITL) learning pipelines, and XR interfaces that adapt based on detected cognitive load and emotional state.</p>
+        </div>
+      </div>
+      <p style="font-size:13px; color:var(--text-muted); margin-top:14px">→ Looking to pursue a Master's thesis on multimodal interaction, VUI evaluation, or Human-AI collaboration? I supervise motivated students working on empirically grounded, publishable research. <a href="mailto:akshaydeshmukh0308@gmail.com">Reach out with a brief statement of interest.</a></p>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="sec-head">Selected Projects</div>
+      <div class="projects-grid">
+
+        <!-- CAUS card -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;background:#0f1923;">
+              <defs>
+                <style>
+                  .road { animation: roadScroll 2s linear infinite; }
+                  .dash1 { animation: dashMove 1s linear infinite; }
+                  .dash2 { animation: dashMove 1s linear infinite 0.33s; }
+                  .dash3 { animation: dashMove 1s linear infinite 0.66s; }
+                  .bar1  { animation: barGrow1 3s ease-in-out infinite; }
+                  .bar2  { animation: barGrow2 3s ease-in-out infinite 0.3s; }
+                  .bar3  { animation: barGrow3 3s ease-in-out infinite 0.6s; }
+                  .pulse { animation: pulseRing 2s ease-out infinite; }
+                  .label-fade { animation: labelFade 3s ease-in-out infinite; }
+                  @keyframes roadScroll {
+                    from { transform: translateX(0); }
+                    to   { transform: translateX(-40px); }
+                  }
+                  @keyframes dashMove {
+                    from { transform: translateX(0); }
+                    to   { transform: translateX(-80px); }
+                  }
+                  @keyframes barGrow1 {
+                    0%,100% { height:30px; y:100px; }
+                    50%      { height:55px; y:75px;  }
+                  }
+                  @keyframes barGrow2 {
+                    0%,100% { height:60px; y:70px; }
+                    50%      { height:80px; y:50px; }
+                  }
+                  @keyframes barGrow3 {
+                    0%,100% { height:45px; y:85px; }
+                    50%      { height:35px; y:95px; }
+                  }
+                  @keyframes pulseRing {
+                    0%   { r:4;  opacity:1; }
+                    100% { r:18; opacity:0; }
+                  }
+                  @keyframes labelFade {
+                    0%,100% { opacity:0.4; }
+                    50%      { opacity:1;   }
+                  }
+                </style>
+              </defs>
+
+              <!-- Road scene -->
+              <rect width="320" height="100" fill="#1a2535"/>
+              <rect y="95" width="320" height="6" fill="#2a3a50"/>
+
+              <!-- Moving road dashes -->
+              <g class="dash1"><rect x="20"  y="97" width="40" height="2" rx="1" fill="#f5c842" opacity="0.6"/></g>
+              <g class="dash2"><rect x="100" y="97" width="40" height="2" rx="1" fill="#f5c842" opacity="0.6"/></g>
+              <g class="dash3"><rect x="180" y="97" width="40" height="2" rx="1" fill="#f5c842" opacity="0.6"/></g>
+              <g class="dash1"><rect x="260" y="97" width="40" height="2" rx="1" fill="#f5c842" opacity="0.6"/></g>
+
+              <!-- Car silhouette -->
+              <rect x="130" y="68" width="60" height="26" rx="5" fill="#2a4d8f"/>
+              <rect x="140" y="60" width="40" height="20" rx="4" fill="#3a6dbf"/>
+              <circle cx="148" cy="95" r="7" fill="#111"/>
+              <circle cx="148" cy="95" r="4" fill="#333"/>
+              <circle cx="172" cy="95" r="7" fill="#111"/>
+              <circle cx="172" cy="95" r="4" fill="#333"/>
+              <!-- headlights -->
+              <rect x="185" y="76" width="6" height="4" rx="1" fill="#fff9c0" opacity="0.9"/>
+
+              <!-- CAUS panel on right -->
+              <rect x="220" y="10" width="88" height="78" rx="4" fill="#0d1f35" opacity="0.9"/>
+              <text x="264" y="24" font-size="7" fill="#5a8fd8" text-anchor="middle" font-family="monospace" letter-spacing="1">CAUS</text>
+
+              <!-- Animated bars -->
+              <rect class="bar1" x="232" width="16" rx="2" fill="#2a4d8f"/>
+              <rect class="bar2" x="252" width="16" rx="2" fill="#3a7fbf"/>
+              <rect class="bar3" x="272" width="16" rx="2" fill="#5a9fd8"/>
+
+              <!-- Labels under bars -->
+              <text x="240" y="140" font-size="6" fill="#5a8fd8" text-anchor="middle" font-family="monospace" class="label-fade">TOUCH</text>
+              <text x="260" y="140" font-size="6" fill="#5af0b8" text-anchor="middle" font-family="monospace" class="label-fade">VOICE</text>
+              <text x="280" y="140" font-size="6" fill="#8ab0e8" text-anchor="middle" font-family="monospace" class="label-fade">GEST</text>
+
+              <!-- Pulse on active point -->
+              <circle cx="260" cy="50" r="4" fill="#5af0b8" opacity="0.9"/>
+              <circle class="pulse" cx="260" cy="50" fill="none" stroke="#5af0b8" stroke-width="1.5"/>
+
+              <!-- Bottom label -->
+              <rect y="110" width="320" height="70" fill="#0f1923"/>
+              <text x="16" y="128" font-size="8.5" fill="#5a8fd8" font-family="monospace" font-weight="bold">α = 0.91  ·  N=36  ·  216 trials</text>
+              <text x="16" y="144" font-size="7.5" fill="#6a7a8a" font-family="monospace">Voice &gt; Gesture &gt; Touch</text>
+              <text x="16" y="160" font-size="7" fill="#4a5a6a" font-family="monospace">Context-Aware Usability Scale · AutoUI 2025</text>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <div class="proj-title"><a href="https://doi.org/10.1145/3744335.3758511">CAUS — Context-Aware Usability Scale</a></div>
+            <div class="proj-desc">Usability in a moving vehicle isn't the same as usability on a desktop. CAUS is a 20-item psychometric scale purpose-built to evaluate multimodal interaction — touch, voice, and gesture — under real driving conditions. Validated through a controlled on-road study (N=36, 216 trials), CAUS achieved high internal consistency (α=0.91) and showed voice interaction significantly outperforms touch in high-complexity urban traffic.</div>
+            <div class="proj-tags"><span class="proj-tag">Automotive HCI</span><span class="proj-tag">Usability Scale</span><span class="proj-tag">Multimodal</span><span class="proj-tag">AutoUI 2025</span></div>
+          </div>
+        </div>
+
+        <!-- EIVA card -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;background:#0f1420;">
+              <defs>
+                <style>
+                  .wave path { animation: waveAnim 1.6s ease-in-out infinite; }
+                  .wave2 path { animation: waveAnim 1.6s ease-in-out infinite 0.2s; }
+                  .wave3 path { animation: waveAnim 1.6s ease-in-out infinite 0.4s; }
+                  .emo-happy { animation: emoSwitch 4s ease-in-out infinite; }
+                  .emo-sad   { animation: emoSwitch 4s ease-in-out infinite 1.33s; }
+                  .emo-angry { animation: emoSwitch 4s ease-in-out infinite 2.66s; }
+                  .chat-in  { animation: slideIn  0.5s ease forwards; }
+                  .chat-r1  { animation: chatAppear 4s ease-in-out infinite; }
+                  .chat-r2  { animation: chatAppear 4s ease-in-out infinite 1s; }
+                  .chat-r3  { animation: chatAppear 4s ease-in-out infinite 2s; }
+                  .mic-pulse { animation: micPulse 1.2s ease-in-out infinite; }
+                  @keyframes waveAnim {
+                    0%,100% { d: path("M0 12 Q20 4 40 12 Q60 20 80 12"); }
+                    50%     { d: path("M0 12 Q20 20 40 12 Q60 4  80 12"); }
+                  }
+                  @keyframes emoSwitch {
+                    0%,25%  { opacity:1; }
+                    33%,100%{ opacity:0; }
+                  }
+                  @keyframes chatAppear {
+                    0%,20% { opacity:0; transform:translateY(4px); }
+                    30%,90%{ opacity:1; transform:translateY(0); }
+                    100%   { opacity:0; }
+                  }
+                  @keyframes micPulse {
+                    0%,100% { r:10; opacity:0.7; }
+                    50%      { r:14; opacity:0.25; }
+                  }
+                </style>
+              </defs>
+
+              <!-- Background -->
+              <rect width="320" height="180" fill="#0f1420"/>
+
+              <!-- Mic circle -->
+              <circle cx="80" cy="68" r="32" fill="#1a2235"/>
+              <circle class="mic-pulse" cx="80" cy="68" fill="none" stroke="#2a4d8f" stroke-width="2"/>
+              <!-- Mic icon -->
+              <rect x="74" y="52" width="12" height="22" rx="6" fill="#3a6dbf"/>
+              <path d="M68 72 Q68 84 80 84 Q92 84 92 72" fill="none" stroke="#3a6dbf" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="80" y1="84" x2="80" y2="90" stroke="#3a6dbf" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- Sound waves -->
+              <g class="wave"  transform="translate(104,56)"><path d="M0 12 Q20 4 40 12 Q60 20 80 12" fill="none" stroke="#2a4d8f" stroke-width="2"/></g>
+              <g class="wave2" transform="translate(104,66)"><path d="M0 12 Q20 4 40 12 Q60 20 80 12" fill="none" stroke="#3a6dbf" stroke-width="1.5" opacity="0.7"/></g>
+              <g class="wave3" transform="translate(104,76)"><path d="M0 12 Q20 4 40 12 Q60 20 80 12" fill="none" stroke="#4a8fe8" stroke-width="1" opacity="0.4"/></g>
+
+              <!-- Emotion label rotating -->
+              <rect x="30" y="106" width="100" height="20" rx="3" fill="#1a2235"/>
+              <g class="emo-happy">
+                <text x="80" y="120" font-size="9" fill="#f5c842" text-anchor="middle" font-family="monospace">😊 Happy · 76.7%</text>
+              </g>
+              <g class="emo-sad">
+                <text x="80" y="120" font-size="9" fill="#5a8fd8" text-anchor="middle" font-family="monospace">😢 Sad · 51.7%</text>
+              </g>
+              <g class="emo-angry">
+                <text x="80" y="120" font-size="9" fill="#e85a4f" text-anchor="middle" font-family="monospace">😠 Angry · 63.9%</text>
+              </g>
+
+              <!-- Response panel -->
+              <rect x="170" y="10" width="136" height="110" rx="5" fill="#141f30"/>
+              <text x="238" y="24" font-size="7" fill="#5a8fd8" text-anchor="middle" font-family="monospace" letter-spacing="1">EIVA RESPONSE</text>
+
+              <g class="chat-r1">
+                <rect x="180" y="30" width="116" height="18" rx="3" fill="#1e3a5f"/>
+                <text x="238" y="43" font-size="6.5" fill="#a8d8ff" text-anchor="middle" font-family="sans-serif">Celebratory · "Yay! Amazing!"</text>
+              </g>
+              <g class="chat-r2">
+                <rect x="180" y="52" width="116" height="18" rx="3" fill="#1e3550"/>
+                <text x="238" y="65" font-size="6.5" fill="#8fc8f8" text-anchor="middle" font-family="sans-serif">Motivational · "Keep it up!"</text>
+              </g>
+              <g class="chat-r3">
+                <rect x="180" y="74" width="116" height="18" rx="3" fill="#182840"/>
+                <text x="238" y="87" font-size="6.5" fill="#6aa8d8" text-anchor="middle" font-family="sans-serif">Neutral · "That's great!"</text>
+              </g>
+
+              <!-- Trust / repair stat -->
+              <rect x="180" y="96" width="116" height="20" rx="3" fill="#2a1f10"/>
+              <text x="238" y="110" font-size="7" fill="#f5a442" text-anchor="middle" font-family="monospace">90% prefer repair ✓</text>
+
+              <!-- Bottom -->
+              <rect y="128" width="320" height="52" fill="#0a0f1a"/>
+              <text x="16" y="146" font-size="8.5" fill="#5a8fd8" font-family="monospace" font-weight="bold">EIVA · N=30 · 1,620 utterances</text>
+              <text x="16" y="162" font-size="7.5" fill="#6a7a8a" font-family="monospace">Alignment &gt; Accuracy · BiLSTM + Attention</text>
+              <text x="16" y="175" font-size="7" fill="#4a5a6a" font-family="monospace">Affect-Adaptive Voice Assistant · CUI 2026</text>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <div class="proj-title"><a href="https://doi.org/10.1145/3771882.3773955">EIVA — Emotionally Intelligent Voice Assistant</a></div>
+            <div class="proj-desc">What matters more — detecting your emotion correctly, or responding to it well? EIVA is a modular research platform built on a BiLSTM + attention speech emotion model (64.1% real-world accuracy) with expressive LLM-generated responses. A controlled study (N=30, 1,620 utterances) found expressive strategies matter far more than detection accuracy — and 90% of users want repair when the system gets it wrong.</div>
+            <div class="proj-tags"><span class="proj-tag">Affective Computing</span><span class="proj-tag">Voice AI</span><span class="proj-tag">Emotion Recognition</span><span class="proj-tag">CUI 2026</span></div>
+          </div>
+        </div>
+
+        <!-- MSCC card -->
+        <div class="proj-card">
+          <div class="proj-thumb">
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;background:#0f1a14;">
+              <defs>
+                <style>
+                  .node-voice { animation: nodeActive 3s ease-in-out infinite; }
+                  .node-touch { animation: nodeActive 3s ease-in-out infinite 1s; }
+                  .node-gest  { animation: nodeActive 3s ease-in-out infinite 2s; }
+                  .arrow-vt   { animation: arrowFlow 3s ease-in-out infinite 0.5s; }
+                  .arrow-tg   { animation: arrowFlow 3s ease-in-out infinite 1.5s; }
+                  .cost-badge { animation: costPop   3s ease-in-out infinite 1s; }
+                  .cost-badge2{ animation: costPop   3s ease-in-out infinite 2s; }
+                  .brain-wave { animation: brainWave 2s ease-in-out infinite; }
+                  .meter-fill { animation: meterUp   3s ease-in-out infinite; }
+                  @keyframes nodeActive {
+                    0%,100%{ fill:#1a3a2a; stroke:#2a6a4a; }
+                    33%    { fill:#1e5a36; stroke:#3aaa6a; }
+                  }
+                  @keyframes arrowFlow {
+                    0%,40% { opacity:0.2; stroke-dashoffset:30; }
+                    60%    { opacity:1;   stroke-dashoffset:0; }
+                    100%   { opacity:0.2; stroke-dashoffset:30; }
+                  }
+                  @keyframes costPop {
+                    0%,45%{ opacity:0; transform:scale(0.8); }
+                    55%   { opacity:1; transform:scale(1.1); }
+                    70%,100%{opacity:0.6;transform:scale(1);}
+                  }
+                  @keyframes brainWave {
+                    0%,100%{ d: path("M10 8 Q20 2 30 8 Q40 14 50 8"); }
+                    50%    { d: path("M10 8 Q20 14 30 8 Q40 2 50 8"); }
+                  }
+                  @keyframes meterUp {
+                    0%,100%{ width:20px; }
+                    50%    { width:80px; }
+                  }
+                </style>
+              </defs>
+
+              <!-- BG -->
+              <rect width="320" height="180" fill="#0f1a14"/>
+
+              <!-- Timeline track -->
+              <line x1="30" y1="72" x2="290" y2="72" stroke="#1a3a2a" stroke-width="2"/>
+
+              <!-- VOICE node -->
+              <g transform="translate(50,52)">
+                <circle class="node-voice" cx="0" cy="0" r="20" stroke-width="2" fill="#1a3a2a" stroke="#2a6a4a"/>
+                <text x="0" y="-28" font-size="7" fill="#3aaa6a" text-anchor="middle" font-family="monospace">VOICE</text>
+                <!-- mic mini -->
+                <rect x="-4" y="-8" width="8" height="13" rx="4" fill="#3aaa6a" opacity="0.8"/>
+                <path d="M-7 7 Q-7 14 0 14 Q7 14 7 7" fill="none" stroke="#3aaa6a" stroke-width="1.5"/>
+              </g>
+
+              <!-- Arrow V→T -->
+              <g class="arrow-vt">
+                <line x1="72" y1="72" x2="148" y2="72" stroke="#f5c842" stroke-width="2" stroke-dasharray="6 4" stroke-dashoffset="30"/>
+                <polygon points="148,68 156,72 148,76" fill="#f5c842"/>
+              </g>
+
+              <!-- Cost badge 1 -->
+              <g class="cost-badge" transform="translate(105,52)">
+                <rect x="-18" y="-10" width="36" height="16" rx="3" fill="#3a2a00"/>
+                <text x="0" y="3" font-size="7.5" fill="#f5c842" text-anchor="middle" font-family="monospace">+MSCC</text>
+              </g>
+
+              <!-- TOUCH node -->
+              <g transform="translate(170,52)">
+                <circle class="node-touch" cx="0" cy="0" r="20" stroke-width="2" fill="#1a3a2a" stroke="#2a6a4a"/>
+                <text x="0" y="-28" font-size="7" fill="#3aaa6a" text-anchor="middle" font-family="monospace">TOUCH</text>
+                <!-- finger mini -->
+                <path d="M0 -9 L0 5 M-5 0 Q-5 9 0 9 Q5 9 5 0 L5 -9" fill="none" stroke="#3aaa6a" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Arrow T→G -->
+              <g class="arrow-tg">
+                <line x1="192" y1="72" x2="248" y2="72" stroke="#f5c842" stroke-width="2" stroke-dasharray="6 4" stroke-dashoffset="30"/>
+                <polygon points="248,68 256,72 248,76" fill="#f5c842"/>
+              </g>
+
+              <!-- Cost badge 2 -->
+              <g class="cost-badge2" transform="translate(224,52)">
+                <rect x="-18" y="-10" width="36" height="16" rx="3" fill="#3a2a00"/>
+                <text x="0" y="3" font-size="7.5" fill="#f5c842" text-anchor="middle" font-family="monospace">+MSCC</text>
+              </g>
+
+              <!-- GESTURE node -->
+              <g transform="translate(270,52)">
+                <circle class="node-gest" cx="0" cy="0" r="20" stroke-width="2" fill="#1a3a2a" stroke="#2a6a4a"/>
+                <text x="0" y="-28" font-size="7" fill="#3aaa6a" text-anchor="middle" font-family="monospace">GESTURE</text>
+                <!-- hand mini -->
+                <path d="M-6 8 L-6 -4 M-3 8 L-3 -8 M0 8 L0 -8 M3 8 L3 -6 M6 8 L6 -2" stroke="#3aaa6a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Cognitive load meter -->
+              <rect x="30" y="96" width="130" height="14" rx="3" fill="#1a2a1a"/>
+              <rect class="meter-fill" x="30" y="96" height="14" rx="3" fill="#2a8a4a"/>
+              <text x="164" y="107" font-size="7" fill="#6aaa8a" font-family="monospace">cognitive load</text>
+
+              <!-- Brain signal -->
+              <g transform="translate(210,97)">
+                <rect x="0" y="0" width="96" height="14" rx="3" fill="#1a2a1a"/>
+                <g class="brain-wave" transform="translate(8,7)">
+                  <path d="M10 8 Q20 2 30 8 Q40 14 50 8" fill="none" stroke="#3aaa6a" stroke-width="1.5"/>
+                </g>
+                <text x="68" y="10" font-size="6.5" fill="#3aaa6a" font-family="monospace">EEG</text>
+              </g>
+
+              <!-- Bottom -->
+              <rect y="120" width="320" height="60" fill="#080f0a"/>
+              <text x="16" y="138" font-size="8.5" fill="#3aaa6a" font-family="monospace" font-weight="bold">MSCC — Event-Level Switch Cost Metric</text>
+              <text x="16" y="154" font-size="7.5" fill="#4a6a5a" font-family="monospace">Quantifying the usability tax of modality switching</text>
+              <text x="16" y="168" font-size="7" fill="#2a4a3a" font-family="monospace">Multimodal Interaction · MUM 2025</text>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <div class="proj-title"><a href="https://doi.org/10.1145/3771882.3773955">MSCC — Modality-Switch Cognitive Cost</a></div>
+            <div class="proj-desc">Every time a user switches from voice to touch — or touch to gesture — there is a measurable cognitive cost. MSCC is a novel event-level usability metric that quantifies exactly that cost, giving multimodal designers a first-class instrument to measure the hidden usability tax of switching. Rather than a design choice, modality switching is now a measurable, optimisable variable.</div>
+            <div class="proj-tags"><span class="proj-tag">Multimodal HCI</span><span class="proj-tag">Cognitive Load</span><span class="proj-tag">Usability Metric</span><span class="proj-tag">MUM 2025</span></div>
+          </div>
+        </div>
+
+        <!-- Automated Evaluation Tool card -->
+        <div class="proj-card">
+          <div class="proj-thumb" style="position:relative;background:#0d1520;">
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              style="width:100%;height:100%;object-fit:cover;display:block;"
+              src="Eval_Tool_Video.mp4">
+            </video>
+            <div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.55);border-radius:3px;padding:2px 7px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(255,255,255,0.7);letter-spacing:0.08em;">▶ DEMO</span>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-title"><a href="https://dirk.burkhardt.xyz/2018/thesis-presentation-automated-user-evaluation-analysis-for-a-simplified-and-continuous-software-development/">Automated User Evaluation Analysis Tool</a></div>
+            <div class="proj-desc">Traditional usability evaluations are expensive, time-consuming, and mostly one-shot affairs. This M.Sc. thesis project (Fraunhofer IGD, TU Darmstadt) built a web-based platform that automates the full evaluation lifecycle — from questionnaire distribution to result analysis — making continuous, repeatable UX measurement possible within an agile development cycle. The tool integrates SUS, AttrakDiff, and INTUI scales and was validated on the Smarter Privacy project.</div>
+            <div class="proj-tags"><span class="proj-tag">Usability Automation</span><span class="proj-tag">UX Tools</span><span class="proj-tag">HCI</span><span class="proj-tag">M.Sc. Thesis · 2018</span></div>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-size:13px; color:var(--text-muted); margin-top:16px">→ Add screenshots or demo images to each card to bring these projects to life visually.</p>
+    </section>
+
+    <section class="section" id="news">
+      <div class="sec-head">News</div>
+      <ul class="news-list" id="news-list">
+        <li class="news-item"><span class="n-date">2025</span><span class="n-text">Paper <em>Towards Context-Aware Usability Assessments in Vehicles: CAUS Scale</em> accepted at <strong>AutoUI 2025</strong> — <a href="https://doi.org/10.1145/3744335.3758511">DOI</a></span></li>
+        <li class="news-item"><span class="n-date">2025</span><span class="n-text">Dissertation published: <em>Measuring User Experience in Voice and Multimodal User Interfaces</em> — <a href="http://hdl.handle.net/10803/696143">Universitat Jaume I</a></span></li>
+        <li class="news-item"><span class="n-date">2025</span><span class="n-text">Paper <em>Mind the Switch: Measuring Modality-Switch Cognitive Costs (MSCC)</em> published in <strong>MUM '25</strong> — <a href="https://doi.org/10.1145/3771882.3773955">DOI</a></span></li>
+        <li class="news-item"><span class="n-date">2025</span><span class="n-text">Paper <em>AI-Based Framework for Usability in Digital Health</em> accepted in <strong>Information Research</strong></span></li>
+        <li class="news-item"><span class="n-date">Nov 2024</span><span class="n-text">Joined <strong>TU Bergakademie Freiberg</strong> as Scientific Employee / Assistant Professor</span></li>
+        <li class="news-item news-hidden"><span class="n-date">2024</span><span class="n-text">Paper <em>User Experience and Usability of Voice User Interfaces: A Systematic Literature Review</em> in <strong>Information</strong> — <a href="https://doi.org/10.3390/info15090579">DOI</a></span></li>
+        <li class="news-item news-hidden"><span class="n-date">2024</span><span class="n-text">Paper <em>Validation of System Usability Scale as a Usability Metric to Evaluate Voice User Interfaces</em> in <strong>PeerJ Computer Science</strong></span></li>
+        <li class="news-item news-hidden"><span class="n-date">2022–24</span><span class="n-text">Led user-centered design &amp; AI evaluation for <strong>OpenGPT-X</strong> at Fraunhofer IAIS</span></li>
+        <li class="news-item news-hidden"><span class="n-date">2019–22</span><span class="n-text">Established <strong>Voice Lab</strong> for AI system testing at Deutsche Telekom, aligned with ETSI and Alexa standards</span></li>
+      </ul>
+      <button class="toggle-btn" id="news-toggle" onclick="toggleNews()">Show all news ▾</button>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="sec-head">Publications</div>
+
+      <div class="pub-filters">
+        <button class="pub-filter active" data-filter="all">All</button>
+        <button class="pub-filter" data-filter="2025">2025</button>
+        <button class="pub-filter" data-filter="2024">2024</button>
+        <button class="pub-filter" data-filter="review">Under Review</button>
+      </div>
+
+      <div class="pub-year" data-year="2025">2025</div>
+      <div class="pub">
+        <div class="pub-title">Mind the Switch: Measuring Modality-Switch Cognitive Costs (MSCC) as a Metric for Multimodal Interaction</div>
+        <div class="pub-meta">Akshay Madhav Deshmukh, Bastian Pfleging</div>
+        <div class="pub-venue">MUM '25 – 24th Intl. Conference on Mobile and Ubiquitous Multimedia<a class="pub-link" href="https://doi.org/10.1145/3771882.3773955">→ DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Towards Context-Aware Usability Assessments in Vehicles: Developing the CAUS Scale for Multimodal Interfaces</div>
+        <div class="pub-meta">Akshay Madhav Deshmukh</div>
+        <div class="pub-venue">AutoUI 2025 – Adjunct Proceedings<a class="pub-link" href="https://doi.org/10.1145/3744335.3758511">→ DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Measuring User Experience in Voice and Multimodal User Interfaces (Ph.D. Dissertation)</div>
+        <div class="pub-meta">Akshay Madhav Deshmukh</div>
+        <div class="pub-venue">Universitat Jaume I<a class="pub-link" href="http://hdl.handle.net/10803/696143">→ Repository</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">AI-Based Framework for Usability in Digital Health</div>
+        <div class="pub-meta">Deshmukh, A. M.</div>
+        <div class="pub-venue">Information Research <span class="status">Accepted</span></div>
+      </div>
+
+      <div class="pub-year" data-year="2024">2024</div>
+      <div class="pub">
+        <div class="pub-title">User Experience and Usability of Voice User Interfaces: A Systematic Literature Review</div>
+        <div class="pub-meta">Deshmukh, A. M., &amp; Chalmeta, R.</div>
+        <div class="pub-venue">Information, 15(9), 579<a class="pub-link" href="https://doi.org/10.3390/info15090579">→ DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Validation of System Usability Scale as a Usability Metric to Evaluate Voice User Interfaces</div>
+        <div class="pub-meta">Deshmukh, A. M., &amp; Chalmeta, R.</div>
+        <div class="pub-venue">PeerJ Computer Science, 10, e1918</div>
+      </div>
+
+      <div class="pub-year" data-year="review">Under Review / Forthcoming</div>
+      <div class="pub">
+        <div class="pub-title">CAUS: A Context-Aware Usability Scale for Evaluating Multimodal Interaction in Driving</div>
+        <div class="pub-venue">AutoUI 2026 <span class="status">Under Review</span></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Quantifying Modality-Switch Cognitive Cost: An Event-Level Usability Metric for Multimodal Interaction</div>
+        <div class="pub-venue">ICMI 2026 <span class="status">Under Review</span></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">From Detection to Alignment: Evaluating Affect-Adaptive Response Strategies in Voice-Only Conversational Agents</div>
+        <div class="pub-venue">CUI 2026, Bremen <span class="status">Under Review</span></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Development and Validation of a User Experience Evaluation Questionnaire for Voice User Interfaces</div>
+        <div class="pub-venue"><span class="status">Under Review</span></div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Comparative Usability Evaluation of Voice and App-Based Interaction Modalities in Smart Home AI Assistants</div>
+        <div class="pub-venue"><span class="status">Under Review</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="sec-head">Experience</div>
+      <div class="exp">
+        <div class="exp-top"><div class="exp-role">Scientific Employee / Assistant Professor</div><div class="exp-dates">Nov 2024 – Present</div></div>
+        <div class="exp-org"><a href="https://www.tu-freiberg.de/en">TU Bergakademie Freiberg</a>, Germany</div>
+        <div class="exp-desc">Teaching Human-Centered AI, Intelligent User Interfaces, and Multimodal Systems to the next generation of computing researchers. Supervising M.Sc. theses on topics I genuinely find fascinating — from real-time driver emotion detection to Human-in-the-Loop AI design systems. Alongside teaching, I pursue active research in ubiquitous computing, XR interaction, and emergency response interfaces (Feuerwehr-App, Saxony).</div>
+      </div>
+      <div class="exp">
+        <div class="exp-top"><div class="exp-role">Senior HMI-UX Researcher</div><div class="exp-dates">Nov 2022 – Oct 2024</div></div>
+        <div class="exp-org"><a href="https://www.iais.fraunhofer.de/en.html">Fraunhofer IAIS</a>, Sankt Augustin, Germany</div>
+        <div class="exp-desc">Led the human-centered evaluation programme for OpenGPT-X, the Foundation Model Playground, and SPEAKER — three of Germany's flagship AI research initiatives. The central challenge: defining what "good" looks like for AI systems when the end users aren't AI researchers. Built evaluation frameworks measuring usability, interaction coherence, cognitive load, and real-world robustness across multimodal deployment contexts.</div>
+      </div>
+      <div class="exp">
+        <div class="exp-top"><div class="exp-role">UX Research Engineer</div><div class="exp-dates">Feb 2019 – Oct 2022</div></div>
+        <div class="exp-org">Deutsche Telekom (via axxessio GmbH)</div>
+        <div class="exp-desc">Built Deutsche Telekom's Voice Lab from the ground up — establishing evaluation standards aligned with ETSI specifications and Alexa certification requirements. Ran systematic usability studies for the Magenta Smart Speaker and TelekomBot, designed end-to-end conversational AI assessment protocols covering ASR accuracy, NLU understanding, and holistic interaction quality, and applied mixed-method evaluation to improve robustness in healthcare and smart-home deployments.</div>
+      </div>
+      <div class="exp">
+        <div class="exp-top"><div class="exp-role">Research Assistant / Directed Researcher</div><div class="exp-dates">Dec 2015 – Feb 2018</div></div>
+        <div class="exp-org"><a href="https://www.igd.fraunhofer.de/en">Fraunhofer IGD</a>, Darmstadt, Germany</div>
+        <div class="exp-desc">Conducted HCI research across the full spectrum of usability evaluation methods — expert review, participatory study, quantitative survey — and synthesised findings into an automated evaluation analysis tool that tracked usability progress across the software development lifecycle. Applied across four projects: Trend Analysis, FUPOL, Process Adaptation, and Smarter Privacy.</div>
+      </div>
+      <div class="exp">
+        <div class="exp-top"><div class="exp-role">Visiting Researcher</div><div class="exp-dates">Jun 2011 – Jul 2014</div></div>
+        <div class="exp-org">Indian Institute of Science (IISc), Bangalore, India</div>
+        <div class="exp-desc">Early-career research on inclusive interface design for India's extraordinarily diverse population — users spanning multiple languages, literacy levels, and degrees of digital experience. This work shaped a lasting commitment to designing technology that works for people beyond the "average user" assumption.</div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="sec-head">Teaching &amp; Supervision</div>
+      <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:12px">I teach research-driven, project-oriented courses at TU Bergakademie Freiberg, with a focus on getting students building and evaluating real systems — not just reading about them.</p>
+      <ul class="t-list">
+        <li>Interactive Ubiquitous Systems &amp; Intelligent User Interfaces <em style="color:var(--text-light)">(full course — B.Sc./M.Sc.)</em></li>
+        <li>User-Centered Design <em style="color:var(--text-light)">(full course — B.Sc./M.Sc.)</em></li>
+        <li>Data Structures in C <em style="color:var(--text-light)">(lectures, exercises &amp; practicals)</em></li>
+      </ul>
+      <br>
+      <p style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); margin-bottom:10px">Thesis Topics Supervised</p>
+      <ul class="t-list">
+        <li>Evaluating UX in Multimodal Voice Interfaces — studying how combining voice with touch reshapes the interaction experience <em style="color:var(--text-light)">(M.Sc.)</em></li>
+        <li>Personalization in Voice User Interfaces — measuring the real impact of tailored responses on user satisfaction and engagement <em style="color:var(--text-light)">(B.Sc.)</em></li>
+        <li>Designing VUIs for Non-Native German Speakers — addressing usability and comprehension gaps often overlooked in mainstream VUI design <em style="color:var(--text-light)">(M.Sc.)</em></li>
+        <li>Driver Emotion Detection via In-Cabin Sensors — building an AI system that adapts the vehicle interface in real time based on detected stress or fatigue <em style="color:var(--text-light)">(M.Sc., Ongoing)</em></li>
+        <li>Human-in-the-Loop Learning for AI-Powered Design Systems — exploring how structured human feedback improves generative design quality and usability <em style="color:var(--text-light)">(M.Sc., Ongoing)</em></li>
+      </ul>
+      <br>
+      <p style="font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-light); margin-bottom:10px">Grants &amp; Collaborations</p>
+      <ul class="t-list">
+        <li><strong>DAAD-DST-PPP</strong> — International research collaboration between BITS Pilani (India) and TUBAF (Germany) on emotionally intelligent voice assistants</li>
+        <li><strong>ESF-Nachwuchsforschergruppen</strong> — SharedBots: designing and evaluating multi-user autonomous robotics for public and semi-public spaces</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+  <div style="border-top:1px solid var(--border); padding:40px 24px 60px; max-width:1080px; margin:0 auto;" id="contact">
+    <div class="sec-head" style="font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:500; margin-bottom:20px; display:flex; align-items:center; gap:10px;">Contact<div style="flex:1;height:1px;background:var(--border);"></div></div>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:20px; max-width:540px;">Whether you are a prospective student, a researcher interested in collaboration, or just want to say hello — feel free to reach out.</p>
+    <form class="contact-form" action="https://formspree.io/f/mvzyzrny" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" name="subject" placeholder="Collaboration / M.Sc. thesis / General enquiry">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+      </div>
+      <input type="hidden" name="_replyto" value="akshaydeshmukh0308@gmail.com">
+      <button type="submit" class="form-submit">Send message →</button>
+      <div id="form-confirm" style="display:none; margin-top:12px; font-size:13px; color:#2a8a4a; font-family:'DM Mono',monospace;">✓ Message sent successfully!</div>
+    </form>
+  </div>
+
+<footer>
+  &copy; 2025 Akshay Deshmukh &nbsp;·&nbsp; TU Bergakademie Freiberg, Germany &nbsp;·&nbsp;
+  <a href="mailto:akshaydeshmukh0308@gmail.com">akshaydeshmukh0308@gmail.com</a>
+</footer>
+
+<script>
+  function toggleNews() {
+    const btn = document.getElementById("news-toggle");
+    const hidden = document.querySelectorAll(".news-hidden");
+    const open = btn.dataset.open === "true";
+    hidden.forEach(el => el.style.display = open ? "none" : "grid");
+    btn.dataset.open = open ? "false" : "true";
+    btn.textContent = open ? "Show all news ▾" : "Show less ▴";
+  }
+</script>
+<!-- Back to top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+// ── HAMBURGER MENU ──────────────────────────────────────────────────────────
+function toggleNav() {
+  const nav = document.getElementById('nav-links');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  document.body.classList.toggle('mobile-nav-open');
+}
+function closeNav() {
+  document.getElementById('nav-links').classList.remove('open');
+  document.body.classList.remove('mobile-nav-open');
+}
+// Close nav on outside click
+document.addEventListener('click', e => {
+  const nav = document.getElementById('nav-links');
+  const btn = document.getElementById('hamburger');
+  if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+});
+
+// ── SCROLL FADE-IN ──────────────────────────────────────────────────────────
+const fadeEls = document.querySelectorAll('.section');
+fadeEls.forEach(el => el.classList.add('fade-in'));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+fadeEls.forEach(el => observer.observe(el));
+
+// ── BACK TO TOP ─────────────────────────────────────────────────────────────
+const btn = document.getElementById('backTop');
+window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
+
+// ── PUBLICATION FILTERS ─────────────────────────────────────────────────────
+document.querySelectorAll('.pub-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.pub, .pub-year').forEach(el => {
+      if (f === 'all') { el.style.display = ''; return; }
+      if (el.classList.contains('pub-year')) {
+        el.style.display = el.dataset.year === f ? '' : 'none';
+        return;
+      }
+      // For pub entries, check which year group they follow
+      let prev = el.previousElementSibling;
+      while (prev && !prev.classList.contains('pub-year')) prev = prev.previousElementSibling;
+      const year = prev ? prev.dataset.year : '';
+      el.style.display = year === f ? '' : 'none';
+    });
+  });
+});
+
+// ── CITE BUTTON ─────────────────────────────────────────────────────────────
+function copyCite(title) {
+  const key = title.replace(/[^a-zA-Z0-9]/g,'').substring(0,20);
+  const bib = `@article{deshmukh${new Date().getFullYear()}${key},\n  author  = {Akshay Madhav Deshmukh},\n  title   = {${title}},\n  year    = {${new Date().getFullYear()}},\n}`;
+  navigator.clipboard.writeText(bib).then(() => {
+    event.currentTarget.classList.add('copied');
+    event.currentTarget.textContent = '✓ Copied';
+    setTimeout(() => { event.currentTarget.classList.remove('copied'); event.currentTarget.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>'; }, 2000);
+  });
+}
+
+// ── GLOBE TOOLTIP ────────────────────────────────────────────────────────────
+const globeCanvas = document.getElementById('globe-canvas');
+const tooltip = document.createElement('div');
+tooltip.style.cssText = 'position:fixed;background:#1a2a4a;color:#fff;font-family:monospace;font-size:11px;padding:5px 10px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity 0.2s;z-index:9999;white-space:nowrap;';
+document.body.appendChild(tooltip);
+
+const cityInfo = [
+  {name:'Bengaluru, India', years:'Born & raised · IISc Research (2011–2014)', lat:12.97, lon:77.59},
+  {name:'Darmstadt, Germany', years:'M.Sc. TU Darmstadt · Fraunhofer IGD (2015–2018)', lat:49.87, lon:8.65},
+  {name:'Sankt Augustin, Germany', years:'Deutsche Telekom · Fraunhofer IAIS (2019–2024)', lat:50.78, lon:7.19},
+  {name:'Freiberg, Germany', years:'TU Bergakademie (2024–present)', lat:50.92, lon:13.34},
+];
+
+globeCanvas.addEventListener('mousemove', e => {
+  const rect = globeCanvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left - 90;
+  const my = e.clientY - rect.top - 90;
+  let hit = null, minDist = 14;
+  cityInfo.forEach(c => {
+    const phi = c.lat*Math.PI/180;
+    const lam = (c.lon + (window._globeRotation||0)) * Math.PI/180;
+    const px = 82*Math.cos(phi)*Math.sin(lam);
+    const py = -82*Math.sin(phi);
+    const pz = Math.cos(phi)*Math.cos(lam);
+    if (pz < 0) return;
+    const d = Math.hypot(px-mx, py-my);
+    if (d < minDist) { minDist = d; hit = c; }
+  });
+  if (hit) {
+    tooltip.innerHTML = `<strong>${hit.name}</strong><br><span style="opacity:0.7;">${hit.years}</span>`;
+    tooltip.style.opacity = '1';
+    tooltip.style.left = (e.clientX+14)+'px';
+    tooltip.style.top  = (e.clientY-10)+'px';
+  } else {
+    tooltip.style.opacity = '0';
+  }
+});
+globeCanvas.addEventListener('mouseleave', () => tooltip.style.opacity = '0');
+</script>
+
+<script>
+(function() {
+  const canvas = document.getElementById('globe-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = 200, H = 200, R = 86, cx = W/2, cy = H/2;
+
+  const cities = [
+    {name:'Bengaluru, India',        years:'Born & raised · IISc (2011–2014)',          lat:12.97,  lon:77.59,  label:'BLR'},
+    {name:'Darmstadt, Germany',      years:'M.Sc. · Fraunhofer IGD (2015–18)',           lat:49.87,  lon:8.65,   label:'DA'},
+    {name:'Sankt Augustin, Germany', years:'Deutsche Telekom · Fraunhofer IAIS (2019–24)',lat:50.78, lon:7.19,   label:'SA'},
+    {name:'Freiberg, Germany',       years:'TU Bergakademie (2024–present)',              lat:50.92,  lon:13.34,  label:'FR'},
+  ];
+
+  let rot = -60, frame = 0, arcProgress = 0;
+  const SPEED = 0.45;
+
+  function project(lat, lon) {
+    const lam = (lon + rot) * Math.PI / 180;
+    const phi = lat * Math.PI / 180;
+    const z = Math.cos(phi) * Math.cos(lam);
+    if (z < 0) return null;
+    return {
+      x: cx + R * Math.cos(phi) * Math.sin(lam),
+      y: cy - R * Math.sin(phi),
+      z
+    };
+  }
+
+  function slerp(lat1, lon1, lat2, lon2, t) {
+    const toV = (lt, ln) => {
+      const p = lt*Math.PI/180, l = (ln+rot)*Math.PI/180;
+      return [Math.cos(p)*Math.sin(l), -Math.sin(p), Math.cos(p)*Math.cos(l)];
+    };
+    const [ax,ay,az] = toV(lat1,lon1), [bx,by,bz] = toV(lat2,lon2);
+    const dot = Math.max(-1, Math.min(1, ax*bx+ay*by+az*bz));
+    const om = Math.acos(dot);
+    if (om < 0.001) return {x:cx+R*ax, y:cy+R*ay, z:az, vis:az>=0};
+    const s = Math.sin(om);
+    const a = Math.sin((1-t)*om)/s, b = Math.sin(t*om)/s;
+    const ix=a*ax+b*bx, iy=a*ay+b*by, iz=a*az+b*bz;
+    return {x:cx+R*ix, y:cy+R*iy, z:iz, vis:iz>=0};
+  }
+
+  // Realistic land polygons
+  const OCEAN  = '#4a90d9';
+  const LAND   = '#6aaa5a';
+  const LAND2  = '#5a9a4a';
+  const ICE    = '#deeeff';
+
+  const lands = [
+    // Europe
+    {c:LAND,  p:[[71,28],[70,20],[65,14],[60,5],[51,2],[43,5],[37,8],[36,14],[38,26],[42,40],[47,38],[52,32],[57,22],[60,24],[65,24],[70,28]]},
+    // Africa
+    {c:LAND2, p:[[37,10],[30,32],[22,38],[10,42],[0,42],[-10,40],[-20,35],[-34,26],[-34,18],[-20,14],[-5,8],[5,2],[15,0],[22,5],[30,5],[37,10]]},
+    // Asia (main)
+    {c:LAND,  p:[[70,30],[60,50],[55,60],[50,80],[42,78],[38,68],[28,70],[22,88],[14,100],[10,105],[22,114],[28,120],[38,140],[46,140],[54,138],[60,130],[68,110],[72,100],[75,80],[70,60],[70,30]]},
+    // Indian subcontinent
+    {c:LAND2, p:[[22,68],[28,72],[24,86],[8,78],[8,77],[18,68]]},
+    // Southeast Asia
+    {c:LAND,  p:[[22,100],[16,100],[10,100],[5,102],[1,104],[5,108],[10,108],[15,108],[20,106],[22,104]]},
+    // North America
+    {c:LAND,  p:[[70,-140],[68,-100],[60,-90],[50,-56],[44,-66],[36,-76],[30,-88],[24,-110],[20,-88],[16,-90],[18,-70],[10,-84],[8,-78],[10,-62],[16,-62],[24,-78],[30,-80],[36,-76],[44,-66],[50,-56],[60,-64],[68,-68],[70,-80],[72,-96],[70,-120],[66,-140]]},
+    // South America
+    {c:LAND2, p:[[10,-62],[8,-60],[0,-50],[-10,-36],[-20,-40],[-34,-58],[-54,-68],[-56,-68],[-40,-62],[-22,-42],[-10,-37],[0,-50],[8,-60]]},
+    // Australia
+    {c:LAND,  p:[[-16,124],[-16,138],[-22,152],[-38,146],[-38,140],[-32,116],[-22,114]]},
+    // Greenland
+    {c:LAND,  p:[[60,-44],[68,-24],[76,-18],[82,-26],[84,-40],[76,-62],[66,-54]]},
+    // Arctic ice
+    {c:ICE,   p:[[90,-180],[90,180],[78,180],[72,120],[75,60],[72,0],[75,-60],[72,-120],[78,-180]]},
+    // Antarctic ice
+    {c:ICE,   p:[[-90,-180],[-90,180],[-74,180],[-68,90],[-70,0],[-68,-90],[-74,-180]]},
+    // Japan
+    {c:LAND,  p:[[32,130],[34,136],[38,140],[44,142],[44,144],[40,142],[36,138],[34,132]]},
+    // UK
+    {c:LAND,  p:[[50,-5],[54,-3],[58,-4],[58,0],[54,0],[50,0]]},
+    // Indonesia
+    {c:LAND2, p:[[5,96],[2,104],[-2,108],[-6,106],[-2,102],[2,100]]},
+  ];
+
+  function drawGlobe() {
+    frame++;
+    ctx.clearRect(0, 0, W, H);
+
+    // ── Ocean base ──────────────────────────────────────────────
+    const oceanGrad = ctx.createRadialGradient(cx-28, cy-28, 4, cx, cy, R);
+    oceanGrad.addColorStop(0,   '#7bbde8');
+    oceanGrad.addColorStop(0.5, '#4a90d9');
+    oceanGrad.addColorStop(1,   '#1a5fa0');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2);
+    ctx.fillStyle = oceanGrad; ctx.fill();
+
+    // Clip to globe
+    ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.clip();
+
+    // ── Latitude/longitude grid (subtle) ────────────────────────
+    ctx.lineWidth = 0.4;
+    ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+    for (let lat = -60; lat <= 60; lat += 30) {
+      const phi = lat * Math.PI/180;
+      const ry  = R * Math.cos(phi);
+      const yy  = cy - R * Math.sin(phi);
+      ctx.beginPath(); ctx.ellipse(cx, yy, ry, ry*0.22, 0, 0, Math.PI*2); ctx.stroke();
+    }
+    for (let lon = 0; lon < 180; lon += 30) {
+      const lam = (lon + rot) * Math.PI/180;
+      const rx  = Math.abs(R * Math.sin(lam)) || 0.5;
+      ctx.beginPath(); ctx.ellipse(cx, cy, rx, R, 0, 0, Math.PI*2); ctx.stroke();
+    }
+    // Equator slightly stronger
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+    ctx.lineWidth = 0.6;
+    ctx.beginPath(); ctx.ellipse(cx, cy, R, R*0.22, 0, 0, Math.PI*2); ctx.stroke();
+
+    // ── Landmasses ──────────────────────────────────────────────
+    lands.forEach(land => {
+      const pts = land.p.map(([lt, ln]) => {
+        const phi = lt * Math.PI/180, lam = (ln + rot) * Math.PI/180;
+        return {
+          x: cx + R * Math.cos(phi) * Math.sin(lam),
+          y: cy - R * Math.sin(phi),
+          z: Math.cos(phi) * Math.cos(lam)
+        };
+      });
+      if (!pts.some(p => p.z > 0.1)) return;
+
+      ctx.beginPath();
+      pts.forEach((p, i) => i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y));
+      ctx.closePath();
+
+      // Land shading — darker near edge
+      const cx2 = pts.reduce((a,p)=>a+p.x,0)/pts.length;
+      const cy2 = pts.reduce((a,p)=>a+p.y,0)/pts.length;
+      const lg = ctx.createRadialGradient(cx2-6,cy2-6,0, cx2,cy2, 40);
+      lg.addColorStop(0, land.c === ICE ? '#f0f8ff' : land.c === LAND ? '#72bc62' : '#62ac52');
+      lg.addColorStop(1, land.c === ICE ? '#c8e8ff' : land.c === LAND ? '#4a8a3a' : '#3a7a2a');
+      ctx.fillStyle = lg; ctx.fill();
+      ctx.strokeStyle = land.c === ICE ? 'rgba(200,230,255,0.3)' : 'rgba(40,100,40,0.25)';
+      ctx.lineWidth = 0.4; ctx.stroke();
+    });
+
+    // ── Night-side shadow (subtle terminator) ───────────────────
+    const shadow = ctx.createRadialGradient(cx+R*0.5, cy+R*0.3, 0, cx+R*0.5, cy+R*0.3, R*1.4);
+    shadow.addColorStop(0,   'rgba(0,10,30,0)');
+    shadow.addColorStop(0.6, 'rgba(0,10,30,0)');
+    shadow.addColorStop(1,   'rgba(0,10,30,0.42)');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2);
+    ctx.fillStyle = shadow; ctx.fill();
+
+    ctx.restore();
+
+    // ── Specular highlight ───────────────────────────────────────
+    const spec = ctx.createRadialGradient(cx-30, cy-32, 2, cx-18, cy-20, R*0.65);
+    spec.addColorStop(0,   'rgba(255,255,255,0.5)');
+    spec.addColorStop(0.3, 'rgba(255,255,255,0.15)');
+    spec.addColorStop(1,   'rgba(255,255,255,0)');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2);
+    ctx.fillStyle = spec; ctx.fill();
+
+    // ── Border ──────────────────────────────────────────────────
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2);
+    ctx.strokeStyle = 'rgba(80,130,200,0.5)'; ctx.lineWidth = 1.2; ctx.stroke();
+
+    // ── Flight arc (Bengaluru → Freiberg) ───────────────────────
+    arcProgress = Math.min(arcProgress + 0.015, 1);
+    const arcPts = [];
+    for (let i = 0; i <= 80; i++) {
+      const t = i / 80;
+      if (t > arcProgress) break;
+      arcPts.push(slerp(12.97, 77.59, 50.92, 13.34, t));
+    }
+    if (arcPts.length > 1) {
+      // Soft glow under the arc
+      ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.clip();
+      for (let i = 1; i < arcPts.length; i++) {
+        const p0=arcPts[i-1], p1=arcPts[i];
+        if (!p0||!p1||!p0.vis||!p1.vis) continue;
+        const alpha = (i/arcPts.length) * 0.3;
+        ctx.beginPath(); ctx.moveTo(p0.x,p0.y); ctx.lineTo(p1.x,p1.y);
+        ctx.strokeStyle = `rgba(255,220,80,${alpha})`;
+        ctx.lineWidth = 3.5; ctx.stroke();
+      }
+      // Dashed arc line
+      ctx.beginPath(); let pd = false;
+      arcPts.forEach(p => {
+        if (!p||!p.vis) { pd=false; return; }
+        pd ? ctx.lineTo(p.x,p.y) : ctx.moveTo(p.x,p.y); pd=true;
+      });
+      ctx.strokeStyle = 'rgba(255,230,60,0.95)';
+      ctx.lineWidth = 1.4; ctx.setLineDash([4,3]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.restore();
+
+      // Comet head
+      const head = arcPts[arcPts.length-1];
+      if (head && head.vis) {
+        const cg = ctx.createRadialGradient(head.x,head.y,0,head.x,head.y,6);
+        cg.addColorStop(0,   'rgba(255,255,200,1)');
+        cg.addColorStop(0.4, 'rgba(255,210,50,0.8)');
+        cg.addColorStop(1,   'rgba(255,180,0,0)');
+        ctx.beginPath(); ctx.arc(head.x,head.y,6,0,Math.PI*2);
+        ctx.fillStyle = cg; ctx.fill();
+      }
+    }
+
+    // ── City dots ────────────────────────────────────────────────
+    cities.forEach(c => {
+      const p = project(c.lat, c.lon);
+      if (!p) return;
+      const sc = 0.5 + 0.5 * p.z;
+      const t  = Date.now() / 1000;
+
+      // Single clean pulse
+      const ph = (t * 0.9) % 1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, (4 + ph*10)*sc, 0, Math.PI*2);
+      ctx.strokeStyle = `rgba(255,80,80,${(1-ph)*0.5})`;
+      ctx.lineWidth = 1; ctx.stroke();
+
+      // Dot — red pin style
+      ctx.beginPath(); ctx.arc(p.x, p.y, 4*sc, 0, Math.PI*2);
+      ctx.fillStyle = '#e83030'; ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x, p.y, 4*sc, 0, Math.PI*2);
+      ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.stroke();
+      // Shine on dot
+      ctx.beginPath(); ctx.arc(p.x-1.2*sc, p.y-1.2*sc, 1.5*sc, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,0.7)'; ctx.fill();
+
+      // Label
+      if (p.z > 0.2) {
+        ctx.font = `bold ${Math.round(7.5*sc)}px monospace`;
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+        ctx.lineWidth = 2.5;
+        ctx.textAlign = 'left';
+        ctx.strokeText(c.label, p.x+6*sc, p.y+3*sc);
+        ctx.fillText(c.label, p.x+6*sc, p.y+3*sc);
+      }
+    });
+
+    rot += SPEED;
+    window._globeRotation = rot;
+    requestAnimationFrame(drawGlobe);
+  }
+
+  drawGlobe();
+})();
+</script>
+</body>
+</html>
