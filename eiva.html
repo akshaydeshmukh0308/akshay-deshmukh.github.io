@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EIVA — Under Review | Akshay Deshmukh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7f5f0;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .card {
+      max-width: 580px;
+      width: 100%;
+      background: #fff;
+      border: 1px solid #e0ddd6;
+      padding: 48px 48px 40px;
+      text-align: center;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: #fff8e6;
+      color: #8a6800;
+      border: 1px solid #e8d87a;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #e8a800;
+      animation: blink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .authors {
+      font-size: 13.5px;
+      color: #787870;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e0ddd6;
+      margin: 24px 0;
+    }
+
+    .message {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #3d3d3a;
+      margin-bottom: 24px;
+    }
+
+    .venue {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #a8a89e;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2a4d8f;
+      text-decoration: none;
+      border: 1px solid #2a4d8f;
+      padding: 9px 20px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      background: #2a4d8f;
+      color: #fff;
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: #c0c0b8;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="status-badge">
+      <span class="dot"></span>
+      Under Review
+    </div>
+
+    <h1>From Detection to Alignment: Evaluating Affect-Adaptive Response Strategies in Voice-Only Conversational Agents</h1>
+
+    <div class="authors">Akshay Madhav Deshmukh</div>
+
+    <hr class="divider">
+
+    <p class="message">
+      This paper is currently <strong>under peer review</strong> and has not yet been published. A preprint or full manuscript will be made available here once the review process is complete.
+    </p>
+
+    <div class="venue">Submitted to CUI 2026 · Bremen, Germany</div>
+
+    <a href="index.html" class="back-btn">← Back to website</a>
+  </div>
+
+  <div class="footer-note">akshay-deshmukh.de · © 2025 Akshay Deshmukh</div>
+
+</body>
+</html>
